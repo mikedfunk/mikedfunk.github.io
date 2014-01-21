@@ -38,7 +38,7 @@ Ok, it's only tangentally related to Vim but this tool is by far the most useful
 
 I could go on and on about all the stuff I've learned since that fateful day at the edge of the rabbit hole. But now I'm all in, having tea with the Mad Hatter. I am so used to the modes and faster movement commands, I get annoyed using other text editors or even browsers or the finder. Vim isn't a perfect silver bullet of course, there will always be things an IDE does better. But it does all the things on my list quite well for free. How many other editors have 30 years of development behind them? Vim's community is still vibrant, with new plugins coming out all the time and tons of cool people willing to help you learn. There are tutorials, articles, flashcards, interactive learning courses, cheat sheets, subreddits, and IRC channels.
 
-> “Alice came to a fork in the road. 'Which road do I take?' she asked.
+> Alice came to a fork in the road. 'Which road do I take?' she asked.
 > 'Where do you want to go?' responded the Cheshire Cat.
 > 'I don't know,' Alice answered.
-> 'Then,' said the Cat, 'it doesn't matter.”
+> 'Then,' said the Cat, 'it doesn't matter.
