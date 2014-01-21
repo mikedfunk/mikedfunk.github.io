@@ -9,8 +9,12 @@ body {
 .masthead {
     background: url('/public/images/wood_pattern.png') repeat;
 }
-.masthead, .colophon {
+.lead {
+    font-size: 20px;
+}
+.masthead, .colophon, .colophon a {
     color: #001F3F;
+    text-align: center;
 }
 .copyright {
     font-size: 14px;
