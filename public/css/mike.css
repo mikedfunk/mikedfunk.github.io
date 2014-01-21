@@ -1,0 +1,28 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+}
+.masthead-inner {
+    bottom: auto;
+    top: 0;
+}
+.masthead {
+    background: url('/public/images/wood_pattern.png') repeat;
+}
+.masthead, .colophon {
+    color: #001F3F;
+}
+.copyright {
+    font-size: 14px;
+}
+.profile_image {
+    margin: 0 auto;
+    /* border: 1px solid #001F3F; */
+    width: 150px;
+    height: 150px;
+    border-radius 75px;
+    -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+    background: url('/public/images/mike.jpg');
+    margin-bottom: 40px;
+}
