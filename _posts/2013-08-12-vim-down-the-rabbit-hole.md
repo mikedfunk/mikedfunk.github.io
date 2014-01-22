@@ -1,3 +1,8 @@
+---
+layout: post
+title: Vim - Down the Rabbit Hole
+---
+
 It's been a strange journey into the annals of Vim, but I'm now pretty comfortable using Vim as a PHP IDE. How did I get here?
 
 ## It all started when I was born…
