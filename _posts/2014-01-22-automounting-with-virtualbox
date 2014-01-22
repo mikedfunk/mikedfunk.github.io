@@ -23,7 +23,8 @@ In Ubuntu, we've only made it half way. Here's how to finish the job.
 1. Symlink `/media/sf_{mount_name}` to `/var/www` assuming you want the destination mount to be /var/www
 2. Append the line `vboxsf` to `/etc/modules` so it is able to mount when you start up
 3. Append this line to `/etc/fstab`: `{mount_name}       /var/www   vboxsf  defaults     0   0` **Be sure to copy the spaces exactly!** The spaces are used to delimit options in fstab. I know, O_O.
-4. Add your user to the vboxsf group: `sudo usermod -a -G {group} {username}` so you can access the directory
+4. Add your user to the vboxsf group: `sudo usermod -a -G vboxsf {username}` so you can access the directory
+5. Add the apache user to the vboxsf group: `sudo usermod -a vboxsf www-data` so apache can serve the files
 5. Restart
 
 Done! Now it should mount when we start up! Now why can't I skip all this crap and just do it in the VirtualBox gui?
