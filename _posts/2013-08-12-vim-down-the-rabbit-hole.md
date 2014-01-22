@@ -2,7 +2,7 @@ It's been a strange journey into the annals of Vim, but I'm now pretty comfortab
 
 ## It all started when I was born…
 
-Well not that far back. I started out in Dreamweaver, which is still good at dealing with HTML markup. It sucks at everything else though. When Coda came out, it really looked great. After quite a few years with Coda, it was showing it's age.
+Well not *that* far back. I started out in Dreamweaver, which is still good at dealing with HTML markup. It sucks at everything else though. When Coda came out, it really looked great. After quite a few years with Coda, it was showing it's age.
 
 I was about to start fresh on a new, large application in a team environment. I wanted to do things right from the start. I wanted an integrated debugger, PHPUnit support, PSR-2 validation, jump to definition, code folding, Git support, fuzzy searching, and more. Eventually I made a comparison chart with the features I wanted. Coda was missing quite a few. I added PHPStorm and Sublime to the chart.
 
