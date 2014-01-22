@@ -5,6 +5,8 @@ title: Vim - Down the Rabbit Hole
 
 It's been a strange journey into the annals of Vim, but I'm now pretty comfortable using Vim as a PHP IDE. How did I get here?
 
+<!--more-->
+
 ## It all started when I was born…
 
 Well not *that* far back. I started out in Dreamweaver, which is still good at dealing with HTML markup. It sucks at everything else though. When Coda came out, it really looked great. After quite a few years with Coda, it was showing it's age.

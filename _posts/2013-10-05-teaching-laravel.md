@@ -5,6 +5,8 @@ title: Teaching Laravel
 
 I love to learn from other developers and share my knowledge. At work recently I needed to explain the Laravel 4 workflow. There are a variety of ways to go about this, and I thought about the pros and cons:
 
+<!--more-->
+
 * *Read and summarize the documentation* - it may be thorough but it only has small snippets of example code without context. This can be hard to relate to practical application and hard to remember.
 * *Set up a presentation with embedded example code* - I've seen this at various conferences. It works great when you don't have much time. It still lacks a degree of greater context, though.
 * *Work through some random example code, referring to the documentation* - This will almost certainly be a jumbled mess that will only confuse the student.
