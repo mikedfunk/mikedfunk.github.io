@@ -7,6 +7,8 @@ I ran into a nasty bug recently that was totally unexpected. I had a form that n
 
 So I thought.
 
+<!--more-->
+
 Unfortunately, if you Google "multiple submit buttons" and open an article, most of them don't mention a nasty IE 6-7 bug where this simple process fails silently. It's not a CSS bug. It's not a javascript bug. It's a bug in the way IE handles submit events, and it sucks.
 
 Here's an example form. It just submits to itself and displays the value of the "action" button submitted. Check the source:
