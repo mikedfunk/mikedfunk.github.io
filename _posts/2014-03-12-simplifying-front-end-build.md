@@ -1,0 +1,32 @@
+---
+layout: post
+title: Simplifying the Front-end Build Process
+---
+
+CSS and JavaScript seems like it should be pretty simple. We have our site stylesheet, our site support scripts, and some dependencies like Twitter Bootstrap, JQuery, etc. And that's fine, until it gets to be a lot. Next thing we know we have 5 internal scripts, 10 dependencies, 3 internal stylesheets. [Google PageSpeed](https://developers.google.com/speed/pagespeed/) is not happy with making 18 HTTP calls to load our front-end dependencies, which aren't gzipped, minified, or [uglified](https://github.com/mishoo/UglifyJS). If you're like me, we tend to just write JQuery spaghetti code, too. No classes, no objects, just `$('.thing').doSomething();` all strung together. Now we realize we have a mess on our hands. We work hard to organize our back-end code and keep it maintainable. Why not the same for front-end?
+
+<!--more-->
+
+## Measurable Improvements
+
+To prevent this, let's first get a tool to guide us in best practices to optimize our load times. The preferred tool for this is [Google PageSpeed](https://developers.google.com/speed/pagespeed/). You can get it as a [Chrome Inspector Extension](https://developers.google.com/speed/pagespeed/insights_extensions) or just go to their [PageSpeed Insights page](http://developers.google.com/speed/pagespeed/insights/). PageSpeed just tells you whether you're doing the right things, and you can go down the list and make improvements one-by-one. Gzipping and far-future expiration dates can be done with the [HTML5Boilerplate .htacess](https://github.com/h5bp/html5-boilerplate/blob/master/.htaccess) file. After that you'll see that you need to minify css and javascript - removing spaces and stuff. Javascript usually goes a step further - "uglifying" code. In addition to removing white space, this renames variables and functions to single characters to shorten the code. And you'll need to combine all your css and js into one file each. This is a lot to do manually. How can we do this without adding a ton of work?
+
+## Back-end Solutions
+
+There are various back-end (PHP) tools to accomplish this. This is where I started. Tools like [Carabiner](http://getsparks.org/packages/carabiner/versions/HEAD/show) for CodeIgniter, [Basset](https://github.com/jasonlewis/basset) or Asset Pipeline for [Laravel](https://github.com/CodeSleeve/asset-pipeline) and [Rails](http://guides.rubyonrails.org/asset_pipeline.html), and various other stuff. They're pretty similar but I'll explain how Basset works. In your views you do something like `basset_assets()` which operates differently in development and production. In development it just links to the unminified individual css/js files with `script` and `link` tags. This way you can easily debug with comments, source file names, and code formatting. In production, you manually run a build script, which does all the front-end build and caching stuff (you can customize what it does and how), and puts the cache files somewhere like `assets/css/cache/49t3psafisduifis.css`. Then in production, when you call `basset_assets()`, it will only link to the single combined, processed cache file instead. This also is an effective cache buster to only cache between versions. It is, however, a bit complicated.
+
+## Front-end
+
+In the last year or two, this has gotten simpler. First there are [Source Maps](http://www.html5rocks.com/en/tutorials/developertools/sourcemaps/). This is metadata that gets inserted into your minified code in development which tells you where that code is defined in the source. This allows you to serve the minified/combined version in dev, but be able to jump to the file/line of the source css/js in the Chrome Web Inspector. But wait, there's more! It can also link SASS or LESS to CSS and CoffeeScript to JavaScript! So now the only thing you need to do differently is add this metadata in dev.
+
+Next, there are better tools to watch and build files and build. First there were tools like [guard](https://github.com/guard/guard) which is a ruby gem that will watch directories or files and do stuff with them. There are community plugins that let you mix and match various tasks when it finds changes. Then there was [Grunt](http://gruntjs.com/) which is a nodejs version of basically the same thing, but less buggy and simpler. More recently there is [Gulp](http://gulpjs.com), which has simpler syntax than Grunt and a little more flexibility on watching and such. Gulp makes writing these behaviors, installing and using plugins a snap. Jeffrey Way made a [great video](https://laracasts.com/lessons/gulp-this) explaining how to use Gulp. Here is [what a Gulpfile looks like](https://gist.github.com/mikaelbr/8425025). Gulp also has a livereload plugin to automatically reload your js/css on save, a s3 plugin to upload to Amazon S3, a js uglify plugin, a jshint plugin, and hundreds of others.
+
+## And Now for Something Completely Different
+
+That takes care of building, but here's a related front-end issue: front-end package dependencies. Let's assume you don't want to link to a JQuery CDN because it could go down and bring your site functionality with it. So we could just download the latest JQuery and add it to your codebase. But now updating becomes a little tedious, especially when you have 10 JQuery plugins, various third-party CSS boilerplates, etc. Another issue is that when you add those libraries to your code, it makes code review a little tricky because you have third-party code cluttering up your commits. Will the real code please stand up?
+
+[Bower](http://bower.io/) solves these issues. It works like [Composer](http://getcomposer.org) for js/css packages. What you do is just store the manifest for which front-end packages you need in `bower.json`, then let bower install them into a folder ignored by Git. You do the same in the build process before all your front-end processing. Now you can easily find most front-end packages from one place, easily install and update, and keep third-party code out of git. Bam!
+
+## Tieing It All Together
+
+GulpJs and Bower take care of these front-end issues and do it well. Combine this with a build/deploy stack such as [Jenkins](http://jenkins-ci.org), [This PHP Template for Jenkins](http://jenkins-php.org), [Laravel Envoy](https://github.com/laravel/envoy), and [Phing](http://phing.info), and you've got a pretty lean, fast, and smart setup.
