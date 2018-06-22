@@ -9,5 +9,6 @@ author:
   email:      'mike@mikefunk.com'
 markdown:     rdiscount
 permalink:    pretty
-pygments:     true
+highlighter:  true
 paginate:     5
+plugins: [jekyll-paginate]

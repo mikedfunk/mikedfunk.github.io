@@ -1,2 +1,5 @@
 gem 'github-pages'
+gem 'jekyll-paginate'
+gem 'pygments.rb'
+gem 'rdiscount'
 source 'https://rubygems.org'
