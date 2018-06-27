@@ -12,16 +12,16 @@ Let's see how the two browsers compare from a web developer's point of view.
 
 * Profiles are FUCKED. I had to use [MultiFirefox](https://davemartorana.com/multifirefox/) (`brew cask install multifirefox`) to even get close to what I was used to with chrome. And then I had two firefox apps running at once with no differentiation in the logos. My biggest complaint. I had to get used to cmd-tab rather than cmd-\`. This actually adds up to a lot of lost time because I cmd-tab to the wrong firefox, then cmd-tab to the right one, then cmd-tab back but end up at the wrong firefox again, etc.
 
-![multifirefox]({{ site.url }}/public/images/multifirefox-window.png)
+<img src="{{ site.url }}/public/images/multifirefox-window.png" width="700" alt="MultiFirefox" />
 Eew.
 
-![Firefox confusion]({{ site.url }}/public/images/multifirefox.gif)
+<img src="{{ site.url }}/public/images/multifirefox.gif" width="735" alt="Firefox Confusion" />
 How do I know which profile this is?
 
 * There is no easy way to create a keyboard shortcut to show/hide the bookmark toolbar. I tried setting it up in mac keyboard settings but it didn't work until I did it once via the menus first :/ And for some reason even then it only worked on my work profile.
 * Columns in the network tab of the inspector are not reorderable... and not even _resizable_! This is really frustrating when you're just trying to see where a request came from without having to select each one. Can't I at least expand the address column??? WTF! (This is a filed bug on Mozilla's bug tracker btw)
 
-![Network Tab]({{ site.url }}/public/images/network-tab.png)
+<img src="{{ site.url }}/public/images/network-tab.png" width="600" alt="Network Tab" />
 
 That "File" column - that's as big as it gets. If you have any query string params you can't see what the damn url is unless you open the detail pane!
 
@@ -32,7 +32,7 @@ That "File" column - that's as big as it gets. If you have any query string para
 * Toolbar customization is pretty much just like it used to be. You can make it look very minimal just like chrome. The only thing is you can't move the search bar from the bottom to the top.
 * `about:config` is equivalent to `chrome:flags`. It is _way_ uglier and has no descriptions on each flag. It barely even has titles as they are just the actual `snake_case.flag.keys.with.dots`.
 
-![about::config]({{ site.url }}/public/images/about-config.png)
+<img src="{{ site.url }}/public/images/about-config.png" width="600" alt="about:config" />
 Blech
 
 * You can't make your own search engines like in Chrome! "Get more search engines" takes you to the addon page. Frustrating! That was really useful to open jiras, zendesk tickets, pull requests, etc.
@@ -58,15 +58,10 @@ Blech
 
 * I also switched to [duckduckgo](https://duckduckgo.com) as my search engine. This is almost as capable as google and has an even nicer design with keyboard navigation built in. (j,k,enter)
 
-![duckduckgo]({{ site.url }}/public/images/duckduckgo.png)
-Mmmmm
+<img src="{{ site.url }}/public/images/duckduckgo.png" width="600" alt="duckduckgo" />
 
-* It shows contextual github repo details when you find a matching repo
+* It does github repo details when you find a matching repo
 * Image, video, and maps search are not as good. They just don't show as many of these rich results, sometimes none at all.
 * Awesome color themes and generic cloud saving with just an anonymous passphrase. You can customize everything from colors to fonts to fixed header, center layout, wide layout, etc. Prettier than google by far.
 * On chrome it prompts you to install their extension which improves privacy.
 * Super fast.
-
-----
-
-Eventually I switched back to Chrome. I'll keep an eye on it - I expect they'll fix the abysmal multiple profile support soon. When that happens and a few other little things are fixed, it's nearly the same. Yay for competition!
