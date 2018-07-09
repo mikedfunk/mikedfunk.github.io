@@ -13,10 +13,10 @@ Let's see how the two browsers compare from a web developer's point of view.
 * Profiles are FUCKED. I had to use [MultiFirefox](https://davemartorana.com/multifirefox/) (`brew cask install multifirefox`) to even get close to what I was used to with chrome. And then I had two firefox apps running at once with no differentiation in the logos. My biggest complaint. I had to get used to cmd-tab rather than cmd-\`. This actually adds up to a lot of lost time because I cmd-tab to the wrong firefox, then cmd-tab to the right one, then cmd-tab back but end up at the wrong firefox again, etc.
 
 <img src="{{ site.url }}/public/images/multifirefox-window.png" width="700" alt="MultiFirefox" />
-Eew.
+*Eew.*
 
 <img src="{{ site.url }}/public/images/multifirefox.gif" width="735" alt="Firefox Confusion" />
-How do I know which profile this is?
+*How do I know which profile this is?*
 
 * There is no easy way to create a keyboard shortcut to show/hide the bookmark toolbar. I tried setting it up in mac keyboard settings but it didn't work until I did it once via the menus first :/ And for some reason even then it only worked on my work profile.
 * Columns in the network tab of the inspector are not reorderable... and not even _resizable_! This is really frustrating when you're just trying to see where a request came from without having to select each one. Can't I at least expand the address column??? WTF! (This is a filed bug on Mozilla's bug tracker btw)
@@ -33,7 +33,7 @@ That "File" column - that's as big as it gets. If you have any query string para
 * `about:config` is equivalent to `chrome:flags`. It is _way_ uglier and has no descriptions on each flag. It barely even has titles as they are just the actual `snake_case.flag.keys.with.dots`.
 
 <img src="{{ site.url }}/public/images/about-config.png" width="600" alt="about:config" />
-Blech
+*Blech*
 
 * You can't make your own search engines like in Chrome! "Get more search engines" takes you to the addon page. Frustrating! That was really useful to open jiras, zendesk tickets, pull requests, etc.
 * Firefox account works fine to save all of my settings. They push you to get the mobile app when you register, which is kind of annoying. They also keep bringing up little notification bars to try to get me on this beta program which does optimizely-like experiments with ui. Not interested, but there is no "stop showing me these"
