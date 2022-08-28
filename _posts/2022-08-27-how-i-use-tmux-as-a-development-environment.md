@@ -52,7 +52,11 @@ You can create a new window with `<prefix>c`. Close it with `<prefix>&`. Rename 
 
 ### Pane
 
-A **pane** is also known as a split. It's a separate box in the current window that has its own shell running (e.g. bash or zsh). You can just have one pane, or you can have any number of panes, split up however you like. There are even pre-defined pane layouts that you can cycle through with `<prefix><space>`. Some common pane shortcuts:
+A **pane** is also known as a split. It's a separate box in the current window that has its own shell running (e.g. bash or zsh). You can just have one pane, or you can have any number of panes, split up however you like.
+
+<img src="{{ site.url }}/public/images/tmux-panes.jpg" width="2452" height="1533" alt="Tmux panes" />
+
+There are even pre-defined pane layouts that you can cycle through with `<prefix><space>`. Some common pane shortcuts:
 
 - `<prefix><down>`, `<prefix><up>`, `<prefix><left>`, `<prefix><right>` to move to the next pane in that direction
 - `<prefix>%`, `<prefix>"` to create a new vertical or horizontal pane, respectively. `<prefix>x` to close a pane.
@@ -60,9 +64,13 @@ A **pane** is also known as a split. It's a separate box in the current window t
 - `<prefix>H` | `<prefix>L` to increase/decrease the vertical size of the paine , `<prefix>J`, `<prefix>K` to increase/decrease the horizontal size of the pane (these are custom bindings I have configured)
 - `<prefix>{`, `<prefix>}` to move a pane left or right. `<prefix>r` to rotate the pane layout clockwise.
 
-<img src="{{ site.url }}/public/images/tmux-panes.jpg" width="2452" height="1533" alt="Tmux panes" />
+Some other useful panes I run for some codebases:
 
-## What does <prefix> mean?
+- automatically run tests on save with [entr](https://github.com/clibs/entr). Jump to that pane to filter to a specific file or test. Send desktop notifications with [noti](https://github.com/variadico/noti) on success or failure.
+- Open a persistent REPL for that codebase inside a running Docker container. If the container is down, keep trying to open the REPL until it's running.
+- Monitor logs for that codebase with [multitail](https://github.com/halturin/multitail) This lets me combine multiple log sources and add custom regex-based coloring to the log output.
+
+## What does `<prefix>` mean?
 
 Since Tmux wraps your other command-line usage, they don't want to define a lot of keyboard shortcuts that could collide with what's running in a pane. So they use a "prefix" keyboard shortcut before running _any_ Tmux command. The default is `<ctrl-b>`. I like to remap it to `<ctrl-a>` which is the [Gnu Screen](https://www.gnu.org/software/screen/) default, just because it's more ergonomic. So once I start a Tmux session, if I want to open a new window, I would type `<ctrl-a>` followed by `c`.
 
