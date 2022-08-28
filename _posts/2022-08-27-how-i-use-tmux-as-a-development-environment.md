@@ -31,7 +31,7 @@ A **session** is a top-level context. I think of it like the company I'm working
 
 A **window** is what I consider more of a tab in Tmux. I put everything related to one _codebase_ or _context_ in a window.
 
-<img src="{{ site.url }}/public/images/tmux-windows.jpg" width="2452" height="1533" alt="Tmux windows" />
+<img src="{{ site.url }}/public/images/tmux-panes.jpg" width="2452" height="1533" alt="Tmux windows and panes" />
 
 For example, I use a [blog](https://github.com/mikedfunk/mikedfunk.github.io) codebase window with a Neovim pane, a [Tig](https://github.com/jonas/tig) pane for git operations, and a pane to run [Jekyll](https://github.com/jekyll/jekyll) to preview and generate my blog on save.
 
@@ -54,8 +54,6 @@ You can create a new window with `<prefix>c`. Close it with `<prefix>&`. Rename 
 
 A **pane** is also known as a split. It's a separate box in the current window that has its own shell running (e.g. bash or zsh). You can just have one pane, or you can have any number of panes, split up however you like.
 
-<img src="{{ site.url }}/public/images/tmux-panes.jpg" width="2452" height="1533" alt="Tmux panes" />
-
 There are even pre-defined pane layouts that you can cycle through with `<prefix><space>`. Some common pane shortcuts:
 
 - `<prefix><down>`, `<prefix><up>`, `<prefix><left>`, `<prefix><right>` to move to the next pane in that direction
@@ -66,7 +64,7 @@ There are even pre-defined pane layouts that you can cycle through with `<prefix
 
 Some other useful panes I run for some codebases:
 
-- automatically run tests on save with [entr](https://github.com/clibs/entr). Jump to that pane to filter to a specific file or test. Send desktop notifications with [noti](https://github.com/variadico/noti) on success or failure.
+- Automatically run tests on save with [entr](https://github.com/clibs/entr). Jump to that pane to filter to a specific file or test. Send desktop notifications with [noti](https://github.com/variadico/noti) on success or failure.
 - Open a persistent REPL for that codebase inside a running Docker container. If the container is down, keep trying to open the REPL until it's running.
 - Monitor logs for that codebase with [multitail](https://github.com/halturin/multitail) This lets me combine multiple log sources and add custom regex-based coloring to the log output.
 
