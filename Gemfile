@@ -4,4 +4,4 @@ gem 'github-pages'
 gem 'jekyll-paginate'
 gem 'pygments.rb'
 gem 'rdiscount'
-gem "webrick", "~> 1.7"
+gem 'webrick', '~> 1.7'
